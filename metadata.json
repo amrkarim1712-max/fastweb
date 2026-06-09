@@ -1,0 +1,6 @@
+{
+  "name": "Zenith Browser",
+  "description": "A minimalist, distraction-free browser with built-in ad blocking and offline reading capabilities.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

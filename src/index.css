@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", ui-serif, Georgia, serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+}
+
+body {
+  @apply bg-zinc-950 text-zinc-100 antialiased selection:bg-zinc-800 selection:text-white;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.prose {
+  --tw-prose-body: theme('colors.zinc.300');
+  --tw-prose-headings: theme('colors.zinc.100');
+  --tw-prose-lead: theme('colors.zinc.400');
+  --tw-prose-links: theme('colors.zinc.100');
+  --tw-prose-bold: theme('colors.zinc.100');
+  --tw-prose-counters: theme('colors.zinc.400');
+  --tw-prose-bullets: theme('colors.zinc.600');
+  --tw-prose-hr: theme('colors.zinc.800');
+  --tw-prose-quotes: theme('colors.zinc.100');
+  --tw-prose-quote-borders: theme('colors.zinc.800');
+  --tw-prose-captions: theme('colors.zinc.400');
+  --tw-prose-code: theme('colors.zinc.100');
+  --tw-prose-pre-code: theme('colors.zinc.300');
+  --tw-prose-pre-bg: theme('colors.zinc.900');
+  --tw-prose-th-borders: theme('colors.zinc.800');
+  --tw-prose-td-borders: theme('colors.zinc.800');
+  
+  @apply max-w-2xl mx-auto;
+}
+
+.prose a {
+  @apply underline underline-offset-4 decoration-zinc-700 hover:decoration-zinc-400 transition-colors;
+}
+
+.prose img {
+  @apply rounded-xl bg-zinc-900 border border-zinc-800/50 object-cover w-full;
+}
+
+/* Custom scrollbar for minimal feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.zinc.950');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.zinc.800');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.zinc.700');
+}
